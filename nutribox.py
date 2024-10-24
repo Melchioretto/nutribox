@@ -76,9 +76,11 @@ def sugerir_plano_alimentar(preferencia_alimentar, proteinas, carboidratos, gord
     return plano
 
 def salvar_plano(resultado):
-    with open("plano_dieta.txt", "w") as file:
+    # Salvar o plano em um arquivo com codificação UTF-8
+    with open("plano_dieta.txt", "w", encoding="utf-8") as file:
         file.write(resultado)
     messagebox.showinfo("Sucesso", "Plano de dieta salvo com sucesso!")
+
 
 def calcular_imc(peso, altura):
     altura_metros = altura / 100
@@ -114,23 +116,33 @@ def gerar_plano():
         # Calcular IMC
         imc = calcular_imc(peso, altura)
 
-        # Mostrar resultados
-        resultado = f"Ingestão calórica diária recomendada: {calorias_diarias:.2f} kcal\n"
-        resultado += f"Proteínas: {proteinas:.2f} g\nCarboidratos: {carboidratos:.2f} g\nGorduras: {gorduras:.2f} g\n"
-        resultado += f"\nSeu IMC é: {imc:.2f} - "
+        # Formatando a saída com espaçamentos e emojis
+        resultado = f"✨ Seu Plano Alimentar do Dia ✨\n"
+        resultado += f"==============================\n"
+        resultado += f"📊 Ingestão calórica diária recomendada: {calorias_diarias:.2f} kcal\n"
+        resultado += f"🍗 Proteínas: {proteinas:.2f} g\n"
+        resultado += f"🍞 Carboidratos: {carboidratos:.2f} g\n"
+        resultado += f"🥑 Gorduras: {gorduras:.2f} g\n"
+        resultado += f"==============================\n\n"
+
+        resultado += f"📝 IMC: Seu IMC é {imc:.2f} - "
         if imc < 18.5:
-            resultado += "Abaixo do peso"
+            resultado += "⚠️ Abaixo do peso"
         elif 18.5 <= imc < 24.9:
-            resultado += "Peso normal"
+            resultado += "✅ Peso normal"
         elif 25 <= imc < 29.9:
-            resultado += "Sobrepeso"
+            resultado += "⚠️ Sobrepeso"
         else:
-            resultado += "Obesidade"
-
-        resultado += "\n\nPlano Alimentar do Dia:\n"
+            resultado += "❌ Obesidade"
+        
+        resultado += "\n🍽️ Plano Alimentar do Dia:\n"
+        resultado += "==============================\n"
+        
+        # Exibindo cada refeição com espaçamento adequado
         for refeicao, descricao in plano.items():
-            resultado += f"{refeicao}: {descricao}\n"
+            resultado += f"🍴 **{refeicao}**\n{descricao}\n\n"
 
+        # Exibir a mensagem final
         messagebox.showinfo("Plano de Dieta", resultado)
 
         # Botão para salvar o plano
@@ -138,6 +150,7 @@ def gerar_plano():
 
     except ValueError:
         messagebox.showerror("Erro", "Por favor, insira valores válidos.")
+
 
 # Interface gráfica com Tkinter
 root = tk.Tk()

@@ -1,4 +1,3 @@
-```markdown
 # 🥗 Sistema de Planejamento de Dieta Nutricional
 
 Este é um sistema desenvolvido em **Python** utilizando a biblioteca **Tkinter** para criar uma interface gráfica que auxilia na geração de um plano alimentar personalizado. Baseado nas informações fornecidas pelo usuário, como peso, altura, idade, sexo, meta de peso, nível de atividade física e preferência alimentar, o sistema sugere refeições adequadas ao longo do dia. 🍽️

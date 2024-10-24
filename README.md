@@ -1,7 +1,3 @@
-Aqui está o arquivo README para o código que você forneceu:
-
----
-
 # Sistema de Planejamento de Dieta Nutricional
 
 Este é um sistema desenvolvido em Python utilizando a biblioteca Tkinter para criar uma interface gráfica que auxilia na geração de um plano alimentar baseado nas informações fornecidas pelo usuário, incluindo peso, altura, idade, sexo, meta (perder, manter ou ganhar peso), nível de atividade física e preferência alimentar.
@@ -78,11 +74,3 @@ Café da Tarde: Peixe com arroz (150g de peixe, 100g de arroz), 100g de salada v
 Jantar: Bife grelhado (150g), purê de batata-doce (100g), 100g de espinafre - 36.8g de proteína, 31.5g de carboidrato, 16.8g de gordura
 Ceia: Queijo cottage (100g) com torrada integral e 1 maçã - 15.8g de proteína, 31.5g de carboidrato, 7.0g de gordura
 ```
-
-## Observações
-
-Este sistema não substitui o acompanhamento profissional de nutricionistas e médicos. Ele é uma ferramenta para auxiliar na organização de um plano alimentar e fornecer uma estimativa de ingestão calórica e macronutrientes.
-
----
-
-Agora você pode executar o código e seguir as instruções descritas neste README para utilizar o sistema.
